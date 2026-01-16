@@ -157,9 +157,25 @@ h6 {
 
 .mobile-menu-btn span {
     width: 24px;
-    height: 2px;
+    height: 3px;
     background: var(--charcoal);
+    border-radius: 2px;
     transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hamburger to X animation when active */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .mobile-nav {

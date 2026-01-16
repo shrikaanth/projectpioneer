@@ -1,22 +1,23 @@
-// Initialize Supabase client
-const SUPABASE_URL = 'https://wuifhzgfmaazqipjqjob.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind1aWZoemdmbWFhenFpcGpxam9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgyMjk4ODIsImV4cCI6MjA4MzgwNTg4Mn0.b2LyK9znrG20eld5LNp6oGHbIweQWhjc15cpVFIxIwo';
-
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Project Pioneer Construction - Services Page JavaScript
 
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileNav = document.getElementById('mobileNav');
 
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
+if (mobileMenuBtn && mobileNav) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         mobileNav.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
     });
 }
 
 function closeMobileMenu() {
     if (mobileNav) {
         mobileNav.classList.remove('active');
+    }
+    if (mobileMenuBtn) {
+        mobileMenuBtn.classList.remove('active');
     }
 }
 
@@ -77,7 +78,7 @@ const submitText = document.getElementById('submitText');
 const submitLoading = document.getElementById('submitLoading');
 
 if (quoteForm) {
-    quoteForm.addEventListener('submit', async (e) => {
+    quoteForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
         // Hide any existing messages
@@ -89,7 +90,7 @@ if (quoteForm) {
         submitLoading.style.display = 'inline';
         quoteForm.querySelector('button[type="submit"]').disabled = true;
 
-        // Gather form data
+        // Gather form data (for future backend integration)
         const formData = {
             full_name: document.getElementById('full_name').value.trim(),
             phone: document.getElementById('phone').value.trim(),
@@ -101,13 +102,9 @@ if (quoteForm) {
             project_details: document.getElementById('project_details').value.trim() || ''
         };
 
-        try {
-            // Submit to Supabase
-            const { data, error } = await supabase
-                .from('contact_submissions')
-                .insert([formData]);
-
-            if (error) throw error;
+        // Simulate submission delay
+        setTimeout(() => {
+            console.log('Form submitted:', formData);
 
             // Show success message
             successMessage.style.display = 'flex';
@@ -116,10 +113,10 @@ if (quoteForm) {
             // Scroll to success message
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-            // Auto-hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
+            // Reset button state
+            submitText.style.display = 'inline';
+            submitLoading.style.display = 'none';
+            quoteForm.querySelector('button[type="submit"]').disabled = false;
 
             // Track conversion for analytics
             if (window.gtag) {
@@ -130,26 +127,11 @@ if (quoteForm) {
                 });
             }
 
-            console.log('Form submitted successfully:', formData);
-
-        } catch (error) {
-            console.error('Error submitting form:', error);
-
-            // Show error message
-            errorMessage.style.display = 'flex';
-            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            // Auto-hide error message after 5 seconds
+            // Auto-hide success message after 5 seconds
             setTimeout(() => {
-                errorMessage.style.display = 'none';
+                successMessage.style.display = 'none';
             }, 5000);
-
-        } finally {
-            // Reset button state
-            submitText.style.display = 'inline';
-            submitLoading.style.display = 'none';
-            quoteForm.querySelector('button[type="submit"]').disabled = false;
-        }
+        }, 1000);
     });
 }
 

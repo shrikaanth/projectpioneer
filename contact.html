@@ -65,7 +65,7 @@
     <!-- Hero Section -->
     <section class="contact-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content text-center">
                 <h2 class="page-title">Contact</h2>
                 <h3 class="hero-title">Get a Quote <span class="highlight">(Ontario • GTA)</span></h3>
                 <p class="hero-description">
@@ -176,85 +176,67 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="process-tip">
+                    <!-- Right Column: Contact Form -->
+                    <div class="form-wrapper">
+                        <div class="form-header">
+                            <h3>Project details</h3>
+                            <p>The more detail you share, the faster we can provide accurate next steps.</p>
+                        </div>
+
+                        <div id="successMessage" class="message success-message" style="display: none;">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
-                                <path
-                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                                <line x1="12" y1="9" x2="12" y2="13" />
-                                <line x1="12" y1="17" x2="12.01" y2="17" />
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
                             </svg>
-                            <p><strong>Tip:</strong> Add real reviews + real project photos here to increase form
-                                submissions from Google Ads.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Contact Form -->
-                <div class="form-wrapper">
-                    <div class="form-header">
-                        <h3>Project details</h3>
-                        <p>The more detail you share, the faster we can provide accurate next steps.</p>
-                    </div>
-
-                    <div id="successMessage" class="message success-message" style="display: none;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                            <polyline points="22 4 12 14.01 9 11.01" />
-                        </svg>
-                        <div>
-                            <p class="message-title">Thank you for your inquiry!</p>
-                            <p class="message-text">We'll be in touch within 24 hours.</p>
-                        </div>
-                    </div>
-
-                    <div id="errorMessage" class="message error-message" style="display: none;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <line x1="12" y1="8" x2="12" y2="12" />
-                            <line x1="12" y1="16" x2="12.01" y2="16" />
-                        </svg>
-                        <p class="message-text">Something went wrong. Please try again or call us directly.</p>
-                    </div>
-
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="full_name">Full Name</label>
-                            <input type="text" id="full_name" name="full_name" placeholder="Your name" required>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            <div>
+                                <p class="message-title">Thank you for your inquiry!</p>
+                                <p class="message-text">We'll be in touch within 24 hours.</p>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="service_needed">Project Type</label>
-                            <select id="service_needed" name="service_needed" required>
-                                <option value="">Select one</option>
-                                <option value="Basement Renovation">Basement Renovation</option>
-                                <option value="Kitchen Renovation">Kitchen Renovation</option>
-                                <option value="Bathroom Renovation">Bathroom Renovation</option>
-                                <option value="Commercial Renovation">Commercial Renovation</option>
-                                <option value="Full Home Remodel">Full Home Remodel</option>
-                                <option value="Other">Other</option>
-                            </select>
+                        <div id="errorMessage" class="message error-message" style="display: none;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="12" y1="8" x2="12" y2="12" />
+                                <line x1="12" y1="16" x2="12.01" y2="16" />
+                            </svg>
+                            <p class="message-text">Something went wrong. Please try again or call us directly.</p>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="city">City</label>
-                                <select id="city" name="city" required>
-                                    <option value="">Select one</option>
+                        <form id="contactForm" class="hero-quote-form">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="full_name" name="full_name"
+                                    placeholder="Your Full Name" required>
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                        placeholder="Phone Number" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Email Address" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <select class="form-select" id="service_needed" name="service_needed" required>
+                                    <option value="" selected disabled>Select Service Needed</option>
+                                    <option value="Restaurant Construction">Restaurant Construction</option>
+                                    <option value="Basement Renovation">Basement Renovation</option>
+                                    <option value="Commercial Renovation">Commercial Renovation</option>
+                                    <option value="Retail Store Fit-Out">Retail Store Fit-Out</option>
+                                    <option value="Residential Remodelling">Residential Remodelling</option>
+                                    <option value="Custom Homes">Custom Homes & Additions</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <select class="form-select" id="city" name="city" required>
+                                    <option value="" selected disabled>Select Your City</option>
                                     <option value="Toronto">Toronto</option>
                                     <option value="Mississauga">Mississauga</option>
                                     <option value="Brampton">Brampton</option>
@@ -263,31 +245,18 @@
                                     <option value="Richmond Hill">Richmond Hill</option>
                                     <option value="Oakville">Oakville</option>
                                     <option value="Burlington">Burlington</option>
-                                    <option value="Ajax">Ajax</option>
-                                    <option value="Pickering">Pickering</option>
                                     <option value="Other GTA">Other GTA</option>
                                 </select>
                             </div>
-
-                            <div class="form-group">
-                                <label for="project_details">Project details</label>
-                                <textarea id="project_details" name="project_details" rows="5"
-                                    placeholder="Describe scope, goals, inspiration links, and any deadline constraints."></textarea>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="project_details" name="project_details" rows="3"
+                                    placeholder="Brief project description..."></textarea>
                             </div>
-
-                            <div class="form-notice">
-                                <p>By submitting, you agree to be contacted about your project. We do not sell your
-                                    information.</p>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-large btn-submit">
-                                <span id="submitText">Submit Quote Request</span>
-                                <span id="submitLoading" style="display: none;">Submitting...</span>
-                            </button>
-                    </form>
+                            <button type="submit" class="btn btn-primary btn-large w-100">Submit Quote Request</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Final CTA Section -->
@@ -335,7 +304,6 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

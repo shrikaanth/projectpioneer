@@ -1,8 +1,4 @@
-// Initialize Supabase client
-const SUPABASE_URL = 'https://wuifhzgfmaazqipjqjob.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind1aWZoemdmbWFhenFpcGpxam9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgyMjk4ODIsImV4cCI6MjA4MzgwNTg4Mn0.b2LyK9znrG20eld5LNp6oGHbIweQWhjc15cpVFIxIwo';
-
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Project Pioneer Construction - Home Page JavaScript
 
 // Smooth scrolling function
 function scrollToSection(sectionId) {
@@ -23,15 +19,20 @@ function scrollToSection(sectionId) {
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileNav = document.getElementById('mobileNav');
 
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
+if (mobileMenuBtn && mobileNav) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         mobileNav.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
     });
 }
 
 function closeMobileMenu() {
     if (mobileNav) {
         mobileNav.classList.remove('active');
+    }
+    if (mobileMenuBtn) {
+        mobileMenuBtn.classList.remove('active');
     }
 }
 
@@ -54,7 +55,7 @@ const submitText = document.getElementById('submitText');
 const submitLoading = document.getElementById('submitLoading');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
         // Hide any existing messages
@@ -66,7 +67,7 @@ if (contactForm) {
         submitLoading.style.display = 'inline';
         contactForm.querySelector('button[type="submit"]').disabled = true;
 
-        // Collect form data
+        // Collect form data (for future backend integration)
         const formData = {
             full_name: document.getElementById('full_name').value,
             phone: document.getElementById('phone').value,
@@ -78,13 +79,9 @@ if (contactForm) {
             project_details: document.getElementById('project_details').value || ''
         };
 
-        try {
-            // Submit to Supabase
-            const { data, error } = await supabase
-                .from('contact_submissions')
-                .insert([formData]);
-
-            if (error) throw error;
+        // Simulate submission delay
+        setTimeout(() => {
+            console.log('Form data submitted:', formData);
 
             // Show success message
             successMessage.style.display = 'flex';
@@ -95,31 +92,16 @@ if (contactForm) {
             // Scroll to success message
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-
-        } catch (error) {
-            console.error('Error submitting form:', error);
-
-            // Show error message
-            errorMessage.style.display = 'flex';
-
-            // Scroll to error message
-            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            // Hide error message after 5 seconds
-            setTimeout(() => {
-                errorMessage.style.display = 'none';
-            }, 5000);
-
-        } finally {
             // Reset button state
             submitText.style.display = 'inline';
             submitLoading.style.display = 'none';
             contactForm.querySelector('button[type="submit"]').disabled = false;
-        }
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }, 1000);
     });
 }
 
@@ -312,3 +294,26 @@ document.querySelectorAll('a[onclick]').forEach(link => {
 console.log('Project Pioneer Construction Website Loaded Successfully');
 console.log('Supabase connection initialized');
 console.log('Color Palette: Pioneer Green (#1F7A54), Steel Blue (#1E3A5F), Charcoal Slate (#2B2F33), Concrete White (#F4F6F5)');
+
+// Scroll progress indicator
+function createScrollProgress() {
+    const scrollProgress = document.createElement('div');
+    scrollProgress.id = 'scroll-progress';
+    scrollProgress.style.position = 'fixed';
+    scrollProgress.style.top = '0';
+    scrollProgress.style.left = '0';
+    scrollProgress.style.height = '3px';
+    scrollProgress.style.background = 'var(--primary-green)';
+    scrollProgress.style.width = '0%';
+    scrollProgress.style.zIndex = '9999';
+    scrollProgress.style.transition = 'width 0.1s ease';
+    document.body.appendChild(scrollProgress);
+
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.pageYOffset / windowHeight) * 100;
+        scrollProgress.style.width = scrolled + '%';
+    });
+}
+
+createScrollProgress();

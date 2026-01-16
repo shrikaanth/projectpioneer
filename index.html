@@ -9,10 +9,12 @@
     <meta name="keywords"
         content="general contractor Ontario, construction company GTA, basement renovation, kitchen renovation, commercial renovation, Toronto contractor, Mississauga renovation">
     <title>Project Pioneer Construction - General Contractor in Ontario • GTA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/floating.css">
 </head>
 
 <body>
@@ -61,24 +63,98 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Video Background -->
+        <div class="hero-video-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="assets/videos/construction-hero.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    Top-rated construction company in Ontario • Transparent pricing • Fast quotes
+            <div class="row align-items-center g-5">
+                <!-- Left Column - Content -->
+                <div class="col-lg-6">
+                    <div class="hero-content text-start">
+                        <div class="hero-badge">
+                            Top-rated construction company in Ontario • Transparent pricing • Fast quotes
+                        </div>
+                        <h2 class="hero-title">General Contractor in Ontario — Serving the GTA for 15+ Years</h2>
+                        <p class="hero-description">
+                            Project Pioneer Construction delivers residential renovations and commercial renovations
+                            across the
+                            Greater Toronto Area. Expect a clear scope, Ontario Building Code–aligned execution, and a
+                            jobsite
+                            that stays clean and controlled.
+                        </p>
+                        <div class="hero-cities">
+                            <p><strong>Serving</strong> Toronto • Mississauga • Brampton • Vaughan • Markham • Richmond
+                                Hill •
+                                Oakville (and nearby)</p>
+                        </div>
+                        <div class="hero-cta justify-content-start">
+                            <a href="#quote-form" class="btn btn-primary btn-large">Get a Fast Quote</a>
+                            <a href="#services" class="btn btn-secondary btn-large">View Services</a>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="hero-title">General Contractor in Ontario — Serving the GTA for 15+ Years</h2>
-                <p class="hero-description">
-                    Project Pioneer Construction delivers residential renovations and commercial renovations across the
-                    Greater Toronto Area. Expect a clear scope, Ontario Building Code–aligned execution, and a jobsite
-                    that stays clean and controlled.
-                </p>
-                <div class="hero-cities">
-                    <p><strong>Serving</strong> Toronto • Mississauga • Brampton • Vaughan • Markham • Richmond Hill •
-                        Oakville (and nearby)</p>
-                </div>
-                <div class="hero-cta">
-                    <a href="#quote-form" class="btn btn-primary btn-large">Get a Fast Quote</a>
-                    <a href="#services" class="btn btn-secondary btn-large">View Services</a>
+                <!-- Right Column - Form -->
+                <div class="col-lg-6">
+                    <div class="hero-form-wrapper">
+                        <div class="hero-form-card">
+                            <h3 class="hero-form-title">Get a Free Quote</h3>
+                            <p class="hero-form-subtitle">Tell us about your project and we'll get back to you within 24
+                                hours.</p>
+                            <form id="heroQuoteForm" class="hero-quote-form">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="hero_name" name="full_name"
+                                        placeholder="Your Full Name" required>
+                                </div>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <input type="tel" class="form-control" id="hero_phone" name="phone"
+                                            placeholder="Phone Number" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" id="hero_email" name="email"
+                                            placeholder="Email Address" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select" id="hero_service" name="service_needed" required>
+                                        <option value="" selected disabled>Select Service Needed</option>
+                                        <option value="Restaurant Construction">Restaurant Construction</option>
+                                        <option value="Basement Renovation">Basement Renovation</option>
+                                        <option value="Commercial Renovation">Commercial Renovation</option>
+                                        <option value="Retail Store Fit-Out">Retail Store Fit-Out</option>
+                                        <option value="Residential Remodelling">Residential Remodelling</option>
+                                        <option value="Custom Homes">Custom Homes & Additions</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select" id="hero_city" name="city" required>
+                                        <option value="" selected disabled>Select Your City</option>
+                                        <option value="Toronto">Toronto</option>
+                                        <option value="Mississauga">Mississauga</option>
+                                        <option value="Brampton">Brampton</option>
+                                        <option value="Vaughan">Vaughan</option>
+                                        <option value="Markham">Markham</option>
+                                        <option value="Richmond Hill">Richmond Hill</option>
+                                        <option value="Oakville">Oakville</option>
+                                        <option value="Burlington">Burlington</option>
+                                        <option value="Other GTA">Other GTA</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="hero_message" name="project_details" rows="3"
+                                        placeholder="Brief project description..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-large w-100">Submit Quote
+                                    Request</button>
+                            </form>
+                            <p class="hero-form-notice">🔒 Your information is secure and never shared.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,8 +213,187 @@
                     <p>Transparent quotes & approvals.</p>
                 </div>
             </div>
-            <p class="stats-disclaimer">*Replace with your verified number (projects/clients) before launch for
-                accuracy.</p>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Build</h2>
+                <h3>Construction & Renovation Services in the GTA</h3>
+                <p>From residential renovations to commercial construction, our services are designed to deliver
+                    consistent quality, clear communication, and results you can rely on across every stage of the
+                    build.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Restaurant Construction & Fit-Outs -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Restaurant Construction" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h4>Restaurant Construction & Fit-Outs</h4>
+                        <p>End-to-end restaurant construction and renovations across the GTA. We understand timelines,
+                            inspections, and the importance of delivering a functional, code-compliant space ready for
+                            opening day.</p>
+                        <div class="service-details">
+                            <p><strong>Includes:</strong> Dining areas • commercial kitchens • washrooms • finishes •
+                                inspections</p>
+                            <p><strong>Ideal for:</strong> New restaurants, upgrades, and rebrands</p>
+                        </div>
+                        <a href="contact.html" class="service-link">Get a Quote →</a>
+                    </div>
+                </div>
+
+                <!-- Basement Renovations -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Basement Renovation" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h4>Basement Renovations</h4>
+                        <p>Transform unfinished or outdated basements into functional living spaces. Our basement
+                            renovations are planned with safety, moisture control, and Ontario Building Code compliance
+                            in mind.</p>
+                        <div class="service-details">
+                            <p><strong>Includes:</strong> Layout planning • framing • insulation • flooring • lighting •
+                                washrooms</p>
+                            <p><strong>Ideal for:</strong> Families seeking more living space or rental potential</p>
+                        </div>
+                        <a href="contact.html" class="service-link">Get a Quote →</a>
+                    </div>
+                </div>
+
+                <!-- Commercial Construction & Renovations -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Commercial Construction" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h4>Commercial Construction & Renovations</h4>
+                        <p>Professional commercial construction services delivered with scheduling discipline and
+                            minimal disruption. We manage trades, timelines, and inspections with clear communication.
+                        </p>
+                        <div class="service-details">
+                            <p><strong>Includes:</strong> Office spaces • clinics • warehouses • interior upgrades</p>
+                            <p><strong>Ideal for:</strong> Businesses requiring reliable execution</p>
+                        </div>
+                        <a href="contact.html" class="service-link">Get a Quote →</a>
+                    </div>
+                </div>
+
+                <!-- Retail Store Fit-Outs -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.pexels.com/photos/1029606/pexels-photo-1029606.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Retail Store Fit-Out" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h4>Retail Store Fit-Outs</h4>
+                        <p>Retail construction and renovations designed to reflect your brand while meeting operational
+                            and safety requirements. We deliver clean, organized job sites and predictable timelines.
+                        </p>
+                        <div class="service-details">
+                            <p><strong>Includes:</strong> Storefronts • interiors • display areas • lighting • finishes
+                            </p>
+                            <p><strong>Ideal for:</strong> New stores, expansions, and renovations</p>
+                        </div>
+                        <a href="contact.html" class="service-link">Get a Quote →</a>
+                    </div>
+                </div>
+
+                <!-- Residential Remodelling -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.pexels.com/photos/1599791/pexels-photo-1599791.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Residential Remodelling" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h4>Residential Remodelling</h4>
+                        <p>From single-room updates to full-home remodelling, we deliver residential projects with clear
+                            scope, transparent pricing, and premium workmanship.</p>
+                        <div class="service-details">
+                            <p><strong>Includes:</strong> Kitchens • bathrooms • layout changes • finishes</p>
+                            <p><strong>Ideal for:</strong> Homeowners upgrading existing spaces</p>
+                        </div>
+                        <a href="contact.html" class="service-link">Get a Quote →</a>
+                    </div>
+                </div>
+
+                <!-- Custom Homes & Additions -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Custom Homes and Additions" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h4>Custom Homes & Additions</h4>
+                        <p>Custom home builds and additions planned from the ground up. We coordinate design, structure,
+                            and construction to deliver high-quality homes built for long-term value.</p>
+                        <div class="service-details">
+                            <p><strong>Includes:</strong> Additions • new builds • structural work • finish coordination
+                            </p>
+                            <p><strong>Ideal for:</strong> Clients building or expanding their dream home</p>
+                        </div>
+                        <a href="contact.html" class="service-link">Get a Quote →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Clients Section -->
+    <section class="clients-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted By Businesses Across Ontario</h2>
+            </div>
+        </div>
+        <div class="clients-marquee">
+            <div class="marquee-track">
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/200px-Amazon_logo.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/200px-Google_2015_logo.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/100px-Apple_logo_black.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/200px-Netflix_2015_logo.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/200px-Logo_of_YouTube_%282015-2017%29.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/200px-Amazon_logo.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/200px-Google_2015_logo.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/100px-Apple_logo_black.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/200px-Netflix_2015_logo.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+                <div class="client-logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/200px-Logo_of_YouTube_%282015-2017%29.svg.png"
+                        alt="Client Logo" loading="lazy"></div>
+            </div>
         </div>
     </section>
 
@@ -225,9 +480,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4>Ad-ready messaging</h4>
-                                <p>"General contractor in Ontario" + specific services to improve Google Ads relevance.
-                                </p>
+                                <h4>Trusted Ontario General Contractor</h4>
+                                <p>Serving homeowners and businesses across the GTA with a reputation built on
+                                    consistency, quality, and accountability.</p>
                             </div>
                         </div>
 
@@ -240,8 +495,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4>Local SEO coverage</h4>
-                                <p>GTA city targeting + renovation keywords to support local search.</p>
+                                <h4>Local GTA Expertise</h4>
+                                <p>Deep experience working in Toronto, Mississauga, Brampton, Vaughan, Markham, Richmond
+                                    Hill, Oakville, and surrounding areas.</p>
                             </div>
                         </div>
 
@@ -257,8 +513,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4>Transparent process</h4>
-                                <p>Documented scope and approvals before changes happen.</p>
+                                <h4>Clear & Transparent Process</h4>
+                                <p>Every project starts with a documented scope, clear pricing, and approvals before
+                                    changes—so there are no surprises.</p>
                             </div>
                         </div>
                     </div>
@@ -288,158 +545,54 @@
                         <p class="message-text">Something went wrong. Please try again or call us directly.</p>
                     </div>
 
-                    <form id="quoteForm" class="quote-form">
-                        <div class="form-group">
-                            <label for="full_name">Full Name</label>
-                            <input type="text" id="full_name" name="full_name" placeholder="Your name" required>
+                    <form id="quoteForm" class="hero-quote-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="full_name" name="full_name"
+                                placeholder="Your Full Name" required>
                         </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" required>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" id="phone" name="phone"
+                                    placeholder="Phone Number" required>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Email Address" required>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="service_needed">Service Needed</label>
-                            <select id="service_needed" name="service_needed" required>
-                                <option value="">Select one</option>
+                        <div class="mb-3">
+                            <select class="form-select" id="service_needed" name="service_needed" required>
+                                <option value="" selected disabled>Select Service Needed</option>
+                                <option value="Restaurant Construction">Restaurant Construction</option>
                                 <option value="Basement Renovation">Basement Renovation</option>
-                                <option value="Kitchen Renovation">Kitchen Renovation</option>
-                                <option value="Bathroom Renovation">Bathroom Renovation</option>
                                 <option value="Commercial Renovation">Commercial Renovation</option>
-                                <option value="Full Home Remodel">Full Home Remodel</option>
+                                <option value="Retail Store Fit-Out">Retail Store Fit-Out</option>
+                                <option value="Residential Remodelling">Residential Remodelling</option>
+                                <option value="Custom Homes">Custom Homes & Additions</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="city">City</label>
-                                <select id="city" name="city" required>
-                                    <option value="">Select one</option>
-                                    <option value="Toronto">Toronto</option>
-                                    <option value="Mississauga">Mississauga</option>
-                                    <option value="Brampton">Brampton</option>
-                                    <option value="Vaughan">Vaughan</option>
-                                    <option value="Markham">Markham</option>
-                                    <option value="Richmond Hill">Richmond Hill</option>
-                                    <option value="Oakville">Oakville</option>
-                                    <option value="Burlington">Burlington</option>
-                                    <option value="Other GTA">Other GTA</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="timeline">Timeline</label>
-                                <select id="timeline" name="timeline" required>
-                                    <option value="">Select one</option>
-                                    <option value="ASAP">ASAP (Within 1 month)</option>
-                                    <option value="1-3 months">1-3 months</option>
-                                    <option value="3-6 months">3-6 months</option>
-                                    <option value="6+ months">6+ months</option>
-                                    <option value="Just exploring">Just exploring</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="budget_range">Budget Range</label>
-                            <select id="budget_range" name="budget_range" required>
-                                <option value="">Select one</option>
-                                <option value="Under $25,000">Under $25,000</option>
-                                <option value="$25,000 - $50,000">$25,000 - $50,000</option>
-                                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-                                <option value="$100,000 - $250,000">$100,000 - $250,000</option>
-                                <option value="$250,000+">$250,000+</option>
-                                <option value="Not sure yet">Not sure yet</option>
+                        <div class="mb-3">
+                            <select class="form-select" id="city" name="city" required>
+                                <option value="" selected disabled>Select Your City</option>
+                                <option value="Toronto">Toronto</option>
+                                <option value="Mississauga">Mississauga</option>
+                                <option value="Brampton">Brampton</option>
+                                <option value="Vaughan">Vaughan</option>
+                                <option value="Markham">Markham</option>
+                                <option value="Richmond Hill">Richmond Hill</option>
+                                <option value="Oakville">Oakville</option>
+                                <option value="Burlington">Burlington</option>
+                                <option value="Other GTA">Other GTA</option>
                             </select>
                         </div>
-
-                        <div class="form-group">
-                            <label for="project_details">Project details</label>
-                            <textarea id="project_details" name="project_details" rows="4"
-                                placeholder="Example: basement renovation with bathroom + bedroom. Need it code-compliant. Prefer a quote this week."></textarea>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="project_details" name="project_details" rows="3"
+                                placeholder="Brief project description..."></textarea>
                         </div>
-
-                        <div class="form-notice">
-                            <p>By submitting, you agree to be contacted about your project. We do not sell your
-                                information.</p>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-large btn-submit">
-                            <span id="submitText">Submit Quote Request</span>
-                            <span id="submitLoading" style="display: none;">Submitting...</span>
-                        </button>
+                        <button type="submit" class="btn btn-primary btn-large w-100">Submit Quote Request</button>
                     </form>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>What We Build</h2>
-                <h3>Construction & Renovation Services in the GTA</h3>
-                <p>Built for local SEO and Google Ads: clear service categories, location signals, and trust-first
-                    process.</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                        </svg>
-                    </div>
-                    <h4>Basement Renovation (Ontario)</h4>
-                    <p>Finished basements, legal basement layouts (as applicable), and code-focused planning for safe,
-                        functional space.</p>
-                    <a href="contact.html" class="service-link">Get a Quote →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                            <polyline points="9 22 9 12 15 12 15 22" />
-                        </svg>
-                    </div>
-                    <h4>Kitchen & Bathroom Renovations</h4>
-                    <p>High-impact remodels with premium finishes, clean detailing, and clear scope so budgets stay
-                        controlled.</p>
-                    <a href="contact.html" class="service-link">Get a Quote →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                        </svg>
-                    </div>
-                    <h4>Commercial Renovations & Fit-Outs</h4>
-                    <p>Office, clinic, retail, and restaurant renovations delivered with scheduling discipline and
-                        minimal downtime.</p>
-                    <a href="contact.html" class="service-link">Get a Quote →</a>
-                </div>
-            </div>
-
-            <div class="service-areas">
-                <h4>Local SEO service areas</h4>
-                <p>We provide construction and renovation services across the GTA, including Toronto, Mississauga,
-                    Brampton, Vaughan, Markham, Richmond Hill, Oakville, Burlington, Scarborough, North York, Etobicoke,
-                    and nearby communities.</p>
             </div>
         </div>
     </section>
@@ -656,7 +809,27 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+        <a href="https://wa.me/14374532986" class="float-icon whatsapp-icon" target="_blank"
+            aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+        </a>
+        <a href="tel:+14374532986" class="float-icon call-icon" aria-label="Call Now">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+            </svg>
+        </a>
+    </div>
+
     <script src="assets/scripts/home.js"></script>
 </body>
 

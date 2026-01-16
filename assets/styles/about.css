@@ -148,37 +148,79 @@ h6 {
 .mobile-menu-btn {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 1001;
+    position: relative;
 }
 
 .mobile-menu-btn span {
+    display: block;
     width: 24px;
-    height: 2px;
+    height: 3px;
     background: var(--charcoal);
+    border-radius: 2px;
     transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hamburger to X animation when active */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .mobile-nav {
     display: none;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0;
+    gap: 0;
+    padding: 0;
     border-top: 1px solid var(--gray-light);
+    background: var(--white);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .mobile-nav.active {
     display: flex;
+    max-height: 400px;
+    padding: 1rem 0;
 }
 
 .mobile-nav a {
     color: var(--charcoal);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 0;
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--gray-light);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mobile-nav a:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:active {
+    background: var(--concrete);
+    color: var(--primary-green);
+}
+
+.mobile-nav a.active {
+    color: var(--primary-green);
+    background: rgba(31, 122, 84, 0.08);
 }
 
 /* Buttons */

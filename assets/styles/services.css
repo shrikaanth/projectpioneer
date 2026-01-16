@@ -157,9 +157,25 @@ h6 {
 
 .mobile-menu-btn span {
     width: 24px;
-    height: 2px;
+    height: 3px;
     background: var(--charcoal);
+    border-radius: 2px;
     transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hamburger to X animation when active */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .mobile-nav {
@@ -262,6 +278,12 @@ h6 {
     margin-bottom: 1rem;
 }
 
+.section-header h3 {
+    font-size: 1.75rem;
+    color: var(--secondary-blue);
+    margin-bottom: 1rem;
+}
+
 .section-header p {
     font-size: 1.125rem;
     color: var(--gray-medium);
@@ -276,7 +298,96 @@ h6 {
 .services-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
+}
+
+/* Service Card with Images */
+.service-card {
+    background: var(--white);
+    border-radius: 0.75rem;
+    border: 2px solid var(--gray-light);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    border-color: var(--primary-green);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
+
+.service-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-content h4 {
+    font-size: 1.25rem;
+    color: var(--secondary-blue);
+    margin-bottom: 0.75rem;
+}
+
+.service-content>p {
+    color: var(--gray-medium);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.service-details {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--concrete);
+    border-radius: 0.5rem;
+    flex-grow: 1;
+}
+
+.service-details p {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.service-details p:last-child {
+    margin-bottom: 0;
+}
+
+.service-details strong {
+    color: var(--secondary-blue);
+}
+
+.service-link {
+    color: var(--primary-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.service-link:hover {
+    color: var(--primary-green-dark);
 }
 
 .service-detail-card {
@@ -793,4 +904,221 @@ textarea:focus-visible,
 button:focus-visible {
     outline: 2px solid var(--primary-green);
     outline-offset: 2px;
+}
+
+/* Responsive Design for Service Cards */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Contact Grid & Sidebar (copied from contact.css) */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 5fr 7fr;
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.info-header h3 {
+    font-size: 1.75rem;
+    color: var(--secondary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.info-header p {
+    color: var(--gray-medium);
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--concrete);
+    border-radius: 0.75rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--primary-green);
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+}
+
+.contact-icon svg {
+    color: var(--white);
+}
+
+.contact-details {
+    flex: 1;
+}
+
+.contact-details h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--charcoal);
+}
+
+.contact-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--primary-green-dark);
+}
+
+.contact-details p {
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+}
+
+/* Sidebar "What happens next" (Mini Process) */
+.sidebar-process-section h3 {
+    font-size: 1.75rem;
+    color: var(--secondary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-process-step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.sidebar-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--primary-green);
+    color: var(--white);
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.sidebar-step-content h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+    color: var(--secondary-blue);
+}
+
+.sidebar-step-content p {
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+}
+
+/* Form Box & Messages (Matches Contact Page) */
+.quote-form-wrapper {
+    background: var(--concrete);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid var(--gray-light);
+}
+
+.form-header {
+    margin-bottom: 1.5rem;
+}
+
+.form-header h3 {
+    font-size: 1.75rem;
+    color: var(--secondary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.success-message {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid #28A745;
+    color: #28A745;
+}
+
+.error-message {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid #DC3545;
+    color: #DC3545;
+}
+
+.message svg {
+    flex-shrink: 0;
+}
+
+.message-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.message-text {
+    font-size: 0.875rem;
 }

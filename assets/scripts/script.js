@@ -23,15 +23,20 @@ function scrollToSection(sectionId) {
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileNav = document.getElementById('mobileNav');
 
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
+if (mobileMenuBtn && mobileNav) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         mobileNav.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
     });
 }
 
 function closeMobileMenu() {
     if (mobileNav) {
         mobileNav.classList.remove('active');
+    }
+    if (mobileMenuBtn) {
+        mobileMenuBtn.classList.remove('active');
     }
 }
 
