@@ -178,85 +178,86 @@
                         </div>
                     </div>
 
-                    <!-- Right Column: Contact Form -->
-                    <div class="form-wrapper">
-                        <div class="form-header">
-                            <h3>Project details</h3>
-                            <p>The more detail you share, the faster we can provide accurate next steps.</p>
-                        </div>
-
-                        <div id="successMessage" class="message success-message" style="display: none;">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>
-                            <div>
-                                <p class="message-title">Thank you for your inquiry!</p>
-                                <p class="message-text">We'll be in touch within 24 hours.</p>
-                            </div>
-                        </div>
-
-                        <div id="errorMessage" class="message error-message" style="display: none;">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <line x1="12" y1="8" x2="12" y2="12" />
-                                <line x1="12" y1="16" x2="12.01" y2="16" />
-                            </svg>
-                            <p class="message-text">Something went wrong. Please try again or call us directly.</p>
-                        </div>
-
-                        <form id="contactForm" class="hero-quote-form">
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="full_name" name="full_name"
-                                    placeholder="Your Full Name" required>
-                            </div>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <input type="tel" class="form-control" id="phone" name="phone"
-                                        placeholder="Phone Number" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" id="email" name="email"
-                                        placeholder="Email Address" required>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <select class="form-select" id="service_needed" name="service_needed" required>
-                                    <option value="" selected disabled>Select Service Needed</option>
-                                    <option value="Restaurant Construction">Restaurant Construction</option>
-                                    <option value="Basement Renovation">Basement Renovation</option>
-                                    <option value="Commercial Renovation">Commercial Renovation</option>
-                                    <option value="Retail Store Fit-Out">Retail Store Fit-Out</option>
-                                    <option value="Residential Remodelling">Residential Remodelling</option>
-                                    <option value="Custom Homes">Custom Homes & Additions</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <select class="form-select" id="city" name="city" required>
-                                    <option value="" selected disabled>Select Your City</option>
-                                    <option value="Toronto">Toronto</option>
-                                    <option value="Mississauga">Mississauga</option>
-                                    <option value="Brampton">Brampton</option>
-                                    <option value="Vaughan">Vaughan</option>
-                                    <option value="Markham">Markham</option>
-                                    <option value="Richmond Hill">Richmond Hill</option>
-                                    <option value="Oakville">Oakville</option>
-                                    <option value="Burlington">Burlington</option>
-                                    <option value="Other GTA">Other GTA</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" id="project_details" name="project_details" rows="3"
-                                    placeholder="Brief project description..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-large w-100">Submit Quote Request</button>
-                        </form>
+                </div>
+                <!-- Right Column: Contact Form -->
+                <div class="form-wrapper">
+                    <div class="form-header">
+                        <h3>Project details</h3>
+                        <p>The more detail you share, the faster we can provide accurate next steps.</p>
                     </div>
+
+                    <div id="successMessage" class="message success-message" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <div>
+                            <p class="message-title">Thank you for your inquiry!</p>
+                            <p class="message-text">We'll be in touch within 24 hours.</p>
+                        </div>
+                    </div>
+
+                    <div id="errorMessage" class="message error-message" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        <p class="message-text">Something went wrong. Please try again or call us directly.</p>
+                    </div>
+
+                    <form id="contactForm" class="hero-quote-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="full_name" name="full_name"
+                                placeholder="Your Full Name" required>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" id="phone" name="phone"
+                                    placeholder="Phone Number" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Email Address" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select" id="service_needed" name="service_needed" required>
+                                <option value="" selected disabled>Select Service Needed</option>
+                                <option value="Restaurant Construction">Restaurant Construction</option>
+                                <option value="Basement Renovation">Basement Renovation</option>
+                                <option value="Commercial Renovation">Commercial Renovation</option>
+                                <option value="Retail Store Fit-Out">Retail Store Fit-Out</option>
+                                <option value="Residential Remodelling">Residential Remodelling</option>
+                                <option value="Custom Homes">Custom Homes & Additions</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select" id="city" name="city" required>
+                                <option value="" selected disabled>Select Your City</option>
+                                <option value="Toronto">Toronto</option>
+                                <option value="Mississauga">Mississauga</option>
+                                <option value="Brampton">Brampton</option>
+                                <option value="Vaughan">Vaughan</option>
+                                <option value="Markham">Markham</option>
+                                <option value="Richmond Hill">Richmond Hill</option>
+                                <option value="Oakville">Oakville</option>
+                                <option value="Burlington">Burlington</option>
+                                <option value="Other GTA">Other GTA</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="project_details" name="project_details" rows="3"
+                                placeholder="Brief project description..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large w-100">Submit Quote Request</button>
+                    </form>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Final CTA Section -->
