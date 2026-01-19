@@ -50,7 +50,7 @@ const submitLoading = document.getElementById('submitLoading');
 
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+        // e.preventDefault(); // Commented out to allow PHP form submission
 
         // Hide any existing messages
         successMessage.style.display = 'none';
