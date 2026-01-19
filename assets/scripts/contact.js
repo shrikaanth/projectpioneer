@@ -48,61 +48,12 @@ const errorMessage = document.getElementById('errorMessage');
 const submitText = document.getElementById('submitText');
 const submitLoading = document.getElementById('submitLoading');
 
+// Contact form submission logic removed to allow native PHP handling
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        // e.preventDefault(); // Commented out to allow PHP form submission
-
-        // Hide any existing messages
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
-
-        // Show loading state
-        submitText.style.display = 'none';
-        submitLoading.style.display = 'inline';
-        contactForm.querySelector('button[type="submit"]').disabled = true;
-
-        // Gather form data (for future backend integration)
-        const formData = {
-            full_name: document.getElementById('full_name').value.trim(),
-            phone: document.getElementById('phone').value.trim(),
-            email: document.getElementById('email').value.trim(),
-            service_needed: document.getElementById('service_needed').value,
-            city: document.getElementById('city').value,
-            timeline: document.getElementById('timeline').value,
-            budget_range: document.getElementById('budget_range').value,
-            project_details: document.getElementById('project_details').value.trim() || ''
-        };
-
-        // Simulate submission delay
-        setTimeout(() => {
-            console.log('Form submitted:', formData);
-
-            // Show success message
-            successMessage.style.display = 'flex';
-            contactForm.reset();
-
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            // Reset button state
-            submitText.style.display = 'inline';
-            submitLoading.style.display = 'none';
-            contactForm.querySelector('button[type="submit"]').disabled = false;
-
-            // Track conversion for analytics
-            if (window.gtag) {
-                gtag('event', 'generate_lead', {
-                    'event_category': 'Form',
-                    'event_label': 'Contact Form Submission',
-                    'value': formData.service_needed
-                });
-            }
-
-            // Auto-hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-        }, 1000);
+    // Only keeping analytics tracking if needed, otherwise letting browser handle POST
+    contactForm.addEventListener('submit', () => {
+        // Optional: Add analytics tracking here if desired, but do not preventDefault
+        console.log('Form submitting to PHP...');
     });
 }
 

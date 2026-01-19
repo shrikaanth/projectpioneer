@@ -78,60 +78,20 @@ const submitText = document.getElementById('submitText');
 const submitLoading = document.getElementById('submitLoading');
 
 if (quoteForm) {
-    quoteForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    quoteForm.addEventListener('submit', () => {
+        // Clear draft on submission
+        localStorage.removeItem('servicesFormDraft');
 
-        // Hide any existing messages
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
-
-        // Show loading state
-        submitText.style.display = 'none';
-        submitLoading.style.display = 'inline';
-        quoteForm.querySelector('button[type="submit"]').disabled = true;
-
-        // Gather form data (for future backend integration)
-        const formData = {
-            full_name: document.getElementById('full_name').value.trim(),
-            phone: document.getElementById('phone').value.trim(),
-            email: document.getElementById('email').value.trim(),
-            service_needed: document.getElementById('service_needed').value,
-            city: document.getElementById('city').value,
-            timeline: document.getElementById('timeline').value,
-            budget_range: document.getElementById('budget_range').value,
-            project_details: document.getElementById('project_details').value.trim() || ''
-        };
-
-        // Simulate submission delay
-        setTimeout(() => {
-            console.log('Form submitted:', formData);
-
-            // Show success message
-            successMessage.style.display = 'flex';
-            quoteForm.reset();
-
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            // Reset button state
-            submitText.style.display = 'inline';
-            submitLoading.style.display = 'none';
-            quoteForm.querySelector('button[type="submit"]').disabled = false;
-
-            // Track conversion for analytics
-            if (window.gtag) {
-                gtag('event', 'generate_lead', {
-                    'event_category': 'Form',
-                    'event_label': 'Services Page Quote Form',
-                    'value': formData.service_needed
-                });
-            }
-
-            // Auto-hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-        }, 1000);
+        // Optional: Add analytics tracking here if desired
+        if (window.gtag) {
+            const serviceNeeded = document.getElementById('service_needed').value;
+            gtag('event', 'generate_lead', {
+                'event_category': 'Form',
+                'event_label': 'Services Page Quote Form',
+                'value': serviceNeeded
+            });
+        }
+        console.log('Services form submitting to PHP...');
     });
 }
 

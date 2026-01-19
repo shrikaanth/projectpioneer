@@ -55,42 +55,9 @@ const submitText = document.getElementById('submitText');
 const submitLoading = document.getElementById('submitLoading');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
-
-        submitText.style.display = 'none';
-        submitLoading.style.display = 'inline';
-        contactForm.querySelector('button[type="submit"]').disabled = true;
-
-        const formData = {
-            full_name: document.getElementById('full_name').value,
-            phone: document.getElementById('phone').value,
-            email: document.getElementById('email').value,
-            service_needed: document.getElementById('service_needed').value,
-            city: document.getElementById('city').value,
-            timeline: document.getElementById('timeline').value,
-            budget_range: document.getElementById('budget_range').value,
-            project_details: document.getElementById('project_details').value || ''
-        };
-
-        // Simulate submission delay
-        setTimeout(() => {
-            console.log('Form submitted:', formData);
-            successMessage.style.display = 'flex';
-            contactForm.reset();
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            submitText.style.display = 'inline';
-            submitLoading.style.display = 'none';
-            contactForm.querySelector('button[type="submit"]').disabled = false;
-
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-        }, 1000);
+    contactForm.addEventListener('submit', () => {
+        // Optional: Add analytics tracking here if desired
+        console.log('About page contact form submitting to PHP...');
     });
 }
 

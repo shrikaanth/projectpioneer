@@ -14,6 +14,7 @@ if (file_exists('vendor/autoload.php')) {
 
 // Include Database Connection
 require_once 'db_connect.php';
+$config = require 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 1. Collect and sanitize input data
@@ -54,16 +55,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Server settings
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;             // Enable verbose debug output
         $mail->isSMTP();                                      // Send using SMTP
-        $mail->Host       = 'smtp.hostinger.com';             // Set the SMTP server to send through
+        $mail->Host       = $config['smtp']['host'];          // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                             // Enable SMTP authentication
-        $mail->Username   = 'no-reply@projectspioneer.com';   // SMTP username
-        $mail->Password   = 'MarketingPPCguru@2026';          // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;      // Enable SSL encryption
-        $mail->Port       = 465;                              // TCP port to connect to
+        $mail->Username   = $config['smtp']['username'];      // SMTP username
+        $mail->Password   = $config['smtp']['password'];      // SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;      // Enable SSL encryption / secure setting
+        $mail->Port       = $config['smtp']['port'];          // TCP port to connect to
 
         // Recipients
         $mail->setFrom('no-reply@projectpioneer.com', 'Project Pioneer Website');
         $mail->addAddress('projects.pioneer.construction@gmail.com');       // Add a recipient
+        $mail->addAddress('shrikaanthshyam@gmail.com');                     // Add secondary recipient as requested
         $mail->addReplyTo($email, $full_name);                // Reply to the customer
 
         // Content

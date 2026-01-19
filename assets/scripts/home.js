@@ -49,59 +49,20 @@ window.addEventListener('scroll', () => {
 
 // Contact form submission
 // Contact form submission
+// Contact form submission
 const formIds = ['heroQuoteForm', 'quoteForm'];
-const successMessage = document.getElementById('successMessage');
-const errorMessage = document.getElementById('errorMessage');
 
 formIds.forEach(id => {
     const form = document.getElementById(id);
     if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            handleFormSubmit(form);
+        form.addEventListener('submit', () => {
+            // Optional: Add analytics tracking here if desired, but do not preventDefault
+            console.log(`Form ${id} submitting to PHP...`);
         });
     }
 });
 
-function handleFormSubmit(form) {
-    // Hide any existing messages
-    if (successMessage) successMessage.style.display = 'none';
-    if (errorMessage) errorMessage.style.display = 'none';
-
-    // Show loading state (if button has text/loading spans)
-    const btn = form.querySelector('button[type="submit"]');
-    const originalBtnText = btn.innerText;
-    btn.disabled = true;
-    btn.innerText = 'Sending...';
-
-    // Collect form data
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    // Simulate submission delay
-    setTimeout(() => {
-        console.log('Form data submitted:', data);
-
-        // Show success message
-        if (successMessage) {
-            successMessage.style.display = 'flex';
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-        }
-
-        // Reset form
-        form.reset();
-
-        // Reset button state
-        btn.innerText = originalBtnText;
-        btn.disabled = false;
-
-    }, 1000);
-}
+// handleFormSubmit function removed to allow native PHP handling
 
 // Form validation
 const emailInput = document.getElementById('email');
