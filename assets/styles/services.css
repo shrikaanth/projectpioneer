@@ -30,6 +30,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -184,6 +185,12 @@ h6 {
     gap: 1rem;
     padding: 1rem 0;
     border-top: 1px solid var(--gray-light);
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav.active {

@@ -48,61 +48,59 @@ window.addEventListener('scroll', () => {
 });
 
 // Contact form submission
-const contactForm = document.getElementById('contactForm');
+// Contact form submission
+const formIds = ['heroQuoteForm', 'quoteForm'];
 const successMessage = document.getElementById('successMessage');
 const errorMessage = document.getElementById('errorMessage');
-const submitText = document.getElementById('submitText');
-const submitLoading = document.getElementById('submitLoading');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+formIds.forEach(id => {
+    const form = document.getElementById(id);
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleFormSubmit(form);
+        });
+    }
+});
 
-        // Hide any existing messages
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
+function handleFormSubmit(form) {
+    // Hide any existing messages
+    if (successMessage) successMessage.style.display = 'none';
+    if (errorMessage) errorMessage.style.display = 'none';
 
-        // Show loading state
-        submitText.style.display = 'none';
-        submitLoading.style.display = 'inline';
-        contactForm.querySelector('button[type="submit"]').disabled = true;
+    // Show loading state (if button has text/loading spans)
+    const btn = form.querySelector('button[type="submit"]');
+    const originalBtnText = btn.innerText;
+    btn.disabled = true;
+    btn.innerText = 'Sending...';
 
-        // Collect form data (for future backend integration)
-        const formData = {
-            full_name: document.getElementById('full_name').value,
-            phone: document.getElementById('phone').value,
-            email: document.getElementById('email').value,
-            service_needed: document.getElementById('service_needed').value,
-            city: document.getElementById('city').value,
-            timeline: document.getElementById('timeline').value,
-            budget_range: document.getElementById('budget_range').value,
-            project_details: document.getElementById('project_details').value || ''
-        };
+    // Collect form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
-        // Simulate submission delay
-        setTimeout(() => {
-            console.log('Form data submitted:', formData);
+    // Simulate submission delay
+    setTimeout(() => {
+        console.log('Form data submitted:', data);
 
-            // Show success message
+        // Show success message
+        if (successMessage) {
             successMessage.style.display = 'flex';
-
-            // Reset form
-            contactForm.reset();
-
-            // Scroll to success message
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            // Reset button state
-            submitText.style.display = 'inline';
-            submitLoading.style.display = 'none';
-            contactForm.querySelector('button[type="submit"]').disabled = false;
 
             // Hide success message after 5 seconds
             setTimeout(() => {
                 successMessage.style.display = 'none';
             }, 5000);
-        }, 1000);
-    });
+        }
+
+        // Reset form
+        form.reset();
+
+        // Reset button state
+        btn.innerText = originalBtnText;
+        btn.disabled = false;
+
+    }, 1000);
 }
 
 // Form validation
