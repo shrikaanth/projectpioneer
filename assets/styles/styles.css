@@ -92,16 +92,15 @@ h6 {
 }
 
 .logo-icon {
-    background: var(--primary-green);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .logo-icon svg {
-    color: var(--white);
+    color: var(--primary-green);
+    width: 40px;
+    height: 40px;
 }
 
 .logo-text h1 {
@@ -1406,12 +1405,21 @@ textarea:focus-visible,
 button:focus-visible {
     outline: 2px solid var(--primary-green);
     outline-offset: 2px;
-}/* Testimonial Slider Styles */
+}
+
+/* Testimonial Slider Styles */
 .testimonials-slider-container {
     position: relative;
-    max-width: 800px;
+    max-width: 100%;
+    /* Allow full width, restrained by container elsewhere or max-width below */
     margin: 0 auto;
     padding: 0 40px;
+}
+
+@media (min-width: 1200px) {
+    .testimonials-slider-container {
+        max-width: 1300px;
+    }
 }
 
 .testimonials-track-container {
@@ -1427,8 +1435,42 @@ button:focus-visible {
 
 .testimonial-slide {
     min-width: 100%;
+    flex: 0 0 100%;
     box-sizing: border-box;
     padding: 1rem;
+    display: flex;
+    /* Ensure the card inside can stretch */
+    height: auto;
+    /* Let flexbox handle height */
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--gray-light);
+    height: 100%;
+    /* Stretch to fill slide height */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .testimonial-slide {
+        min-width: 50%;
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .testimonial-slide {
+        min-width: 33.333%;
+        flex: 0 0 33.333%;
+    }
 }
 
 .slider-btn {
@@ -1496,16 +1538,26 @@ button:focus-visible {
 }
 
 .author-avatar-placeholder {
-    width: 50px;
-    height: 50px;
-    background: var(--primary-green);
-    color: white;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border-radius: 8px;
+    /* Square with rounded corners for logos */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    font-weight: 700;
+    color: var(--secondary-blue);
     font-size: 1.2rem;
+    overflow: hidden;
+    /* Find logos */
+}
+
+.author-avatar-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0;
 }
 
 .author-details {
@@ -1537,4 +1589,67 @@ button:focus-visible {
     .testimonial-slide {
         scroll-snap-align: center;
     }
+}
+
+/* End-to-End Support Section */
+.support-section {
+    padding: 6rem 0;
+    background: var(--concrete);
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.support-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.support-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(31, 122, 84, 0.2);
+}
+
+.support-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(31, 122, 84, 0.1);
+    color: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.support-card:hover .support-icon {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.support-card h4 {
+    font-size: 1.5rem;
+    color: var(--secondary-blue);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.support-card p {
+    color: var(--gray-medium);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
 }
