@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port       = $config['smtp']['port'];          // TCP port to connect to
 
         // Recipients
-        $mail->setFrom('no-reply@projectpioneer.com', 'Project Pioneer Website');
+        $mail->setFrom('no-reply@projectspioneer.com', 'Project Pioneer Website');
         $mail->addAddress('projects.pioneer.construction@gmail.com');       // Add a recipient
         $mail->addAddress('shrikaanthshyam@gmail.com');                     // Add secondary recipient as requested
         $mail->addReplyTo($email, $full_name);                // Reply to the customer

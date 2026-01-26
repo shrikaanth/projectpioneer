@@ -1,9 +1,9 @@
 <?php
 // Database configuration
 $servername = "localhost";
-$username = "root";      // Default XAMPP username
-$password = "";          // Default XAMPP password (usually empty)
-$dbname = "project_pioneer_db";
+$username = "u132284133_ppuser";      // Default XAMPP username
+$password = "Projectpioneer@2026";          // Default XAMPP password (usually empty)
+$dbname = "u132284133_ppdb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
