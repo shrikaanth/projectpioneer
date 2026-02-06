@@ -309,4 +309,4 @@ revealSections.forEach(section => {
 });
 
 console.log('All interactive features initialized');
-console.log('Color Palette: Pioneer Green (#1F7A54), Steel Blue (#1E3A5F), Charcoal Slate (#2B2F33), Concrete White (#F4F6F5)');
+console.log('Color Palette: Pioneer Navy (#0d2443), Steel Blue (#1E3A5F), Charcoal Slate (#2B2F33), Concrete White (#F4F6F5)');

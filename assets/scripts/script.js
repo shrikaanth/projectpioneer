@@ -316,4 +316,4 @@ document.querySelectorAll('a[onclick]').forEach(link => {
 
 console.log('Project Pioneer Construction Website Loaded Successfully');
 console.log('Supabase connection initialized');
-console.log('Color Palette: Pioneer Green (#1F7A54), Steel Blue (#1E3A5F), Charcoal Slate (#2B2F33), Concrete White (#F4F6F5)');
+console.log('Color Palette: Pioneer Navy (#0d2443), Steel Blue (#1E3A5F), Charcoal Slate (#2B2F33), Concrete White (#F4F6F5)');

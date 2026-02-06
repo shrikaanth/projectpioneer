@@ -2,7 +2,7 @@
  * Project Pioneer Construction - Contact Page
  *
  * Color Palette:
- * Primary - Pioneer Green: #1F7A54 (Growth, reliability, sustainability)
+ * Primary - Pioneer Navy: #0d2443 (Growth, reliability, sustainability)
  * Secondary - Steel Blue: #1E3A5F (Stability, engineering, professionalism)
  * Neutral Dark - Charcoal Slate: #2B2F33 (Body text, contrast, outlines)
  * Neutral Light - Concrete White: #F4F6F5 (Backgrounds, cards, documents)
@@ -15,7 +15,7 @@
 }
 
 :root {
-    --primary-green: #1F7A54;
+    --primary-green: #0d2443;
     --primary-green-dark: #145838;
     --secondary-blue: #1E3A5F;
     --secondary-blue-dark: #152941;
@@ -228,7 +228,7 @@ h6 {
 .btn-primary:hover {
     background: var(--primary-green-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(31, 122, 84, 0.3);
+    box-shadow: 0 8px 20px rgba(13, 36, 67, 0.3);
 }
 
 .btn-large {
@@ -432,7 +432,7 @@ h6 {
     display: flex;
     gap: 0.75rem;
     padding: 1rem;
-    background: rgba(31, 122, 84, 0.05);
+    background: rgba(13, 36, 67, 0.05);
     border-left: 3px solid var(--primary-green);
     border-radius: 0.5rem;
 }
@@ -548,7 +548,7 @@ h6 {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(31, 122, 84, 0.1);
+    box-shadow: 0 0 0 3px rgba(13, 36, 67, 0.1);
 }
 
 .form-group textarea {
@@ -607,7 +607,7 @@ h6 {
     justify-content: center;
     width: 4rem;
     height: 4rem;
-    background: rgba(31, 122, 84, 0.1);
+    background: rgba(13, 36, 67, 0.1);
     border-radius: 0.75rem;
     margin: 0 auto 1.5rem;
 }

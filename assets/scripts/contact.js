@@ -413,5 +413,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 console.log('Contact Page Loaded');
 console.log('Page: Contact - Project Pioneer Construction');
 console.log('Supabase connection initialized');
-console.log('Color Palette: Pioneer Green (#1F7A54), Steel Blue (#1E3A5F), Charcoal Slate (#2B2F33), Concrete White (#F4F6F5)');
+console.log('Color Palette: Pioneer Navy (#0d2443), Steel Blue (#1E3A5F), Charcoal Slate (#2B2F33), Concrete White (#F4F6F5)');
 console.log('Form auto-save enabled - drafts saved every 10 seconds');

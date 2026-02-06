@@ -2,7 +2,7 @@
  * Project Pioneer Construction - Home Page
  *
  * Color Palette:
- * Primary - Pioneer Green: #1F7A54 (Growth, reliability, sustainability)
+ * Primary - Pioneer Navy: #0d2443 (Growth, reliability, sustainability)
  * Secondary - Steel Blue: #1E3A5F (Stability, engineering, professionalism)
  * Neutral Dark - Charcoal Slate: #2B2F33 (Body text, contrast, outlines)
  * Neutral Light - Concrete White: #F4F6F5 (Backgrounds, cards, documents)
@@ -15,8 +15,8 @@
 }
 
 :root {
-    --primary-green: #1F7A54;
-    --primary-green-dark: #145838;
+    --primary-green: #0d2443;
+    --primary-green-dark: #071526;
     --secondary-blue: #1E3A5F;
     --secondary-blue-dark: #152941;
     --charcoal: #2B2F33;
@@ -146,6 +146,14 @@ h6 {
     background: var(--primary-green);
 }
 
+.desktop-nav a.btn {
+    color: var(--white);
+}
+
+.desktop-nav a.btn:hover {
+    color: var(--white);
+}
+
 .mobile-menu-btn {
     display: flex;
     flex-direction: column;
@@ -226,7 +234,7 @@ h6 {
 
 .mobile-nav a.active {
     color: var(--primary-green);
-    background: rgba(31, 122, 84, 0.08);
+    background: rgba(13, 36, 67, 0.08);
 }
 
 /* Buttons */
@@ -253,7 +261,7 @@ h6 {
 .btn-primary:hover {
     background: var(--primary-green-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(31, 122, 84, 0.3);
+    box-shadow: 0 8px 20px rgba(13, 36, 67, 0.3);
 }
 
 .btn-secondary {
@@ -383,7 +391,7 @@ h6 {
 .hero-quote-form .form-control:focus,
 .hero-quote-form .form-select:focus {
     border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(31, 122, 84, 0.15);
+    box-shadow: 0 0 0 3px rgba(13, 36, 67, 0.15);
 }
 
 .hero-quote-form .form-control::placeholder {
@@ -515,7 +523,7 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(31, 122, 84, 0.4) 0%, rgba(30, 58, 95, 0.4) 100%);
+    background: linear-gradient(135deg, rgba(13, 36, 67, 0.4) 0%, rgba(30, 58, 95, 0.4) 100%);
 }
 
 .hero .container {
@@ -809,7 +817,7 @@ h6 {
     justify-content: center;
     width: 3rem;
     height: 3rem;
-    background: rgba(31, 122, 84, 0.1);
+    background: rgba(13, 36, 67, 0.1);
     border-radius: 0.5rem;
     flex-shrink: 0;
 }
@@ -914,7 +922,7 @@ h6 {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(31, 122, 84, 0.1);
+    box-shadow: 0 0 0 3px rgba(13, 36, 67, 0.1);
 }
 
 .form-group textarea {
@@ -980,7 +988,7 @@ h6 {
     justify-content: center;
     width: 5rem;
     height: 5rem;
-    background: rgba(31, 122, 84, 0.1);
+    background: rgba(13, 36, 67, 0.1);
     border-radius: 0.75rem;
     margin-bottom: 1.5rem;
 }
@@ -1618,13 +1626,13 @@ button:focus-visible {
 .support-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-    border-color: rgba(31, 122, 84, 0.2);
+    border-color: rgba(13, 36, 67, 0.2);
 }
 
 .support-icon {
     width: 80px;
     height: 80px;
-    background: rgba(31, 122, 84, 0.1);
+    background: rgba(13, 36, 67, 0.1);
     color: var(--primary-green);
     border-radius: 50%;
     display: flex;
