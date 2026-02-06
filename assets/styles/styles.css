@@ -97,10 +97,10 @@ h6 {
     justify-content: center;
 }
 
-.logo-icon svg {
-    color: var(--primary-green);
+.logo-icon img {
     width: 40px;
     height: 40px;
+    object-fit: contain;
 }
 
 .logo-text h1 {
