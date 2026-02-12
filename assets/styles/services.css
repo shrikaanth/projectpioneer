@@ -245,7 +245,7 @@ h6 {
     padding: 10rem 0 4rem;
     background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--secondary-blue-dark) 100%);
     color: var(--white);
-    text-align: center;
+    text-align: center !important;
 }
 
 .page-hero .hero-badge {
@@ -263,6 +263,7 @@ h6 {
     font-size: 2.5rem;
     color: var(--white);
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .page-hero .hero-description {
@@ -270,6 +271,7 @@ h6 {
     max-width: 700px;
     margin: 0 auto;
     opacity: 0.95;
+    text-align: center;
 }
 
 /* Section Header */
